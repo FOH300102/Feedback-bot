@@ -128,8 +128,9 @@ async def start(bot, message):
         text=LOG_TEXT.format(message.chat.id,message.chat.id,message.chat.first_name,message.chat.last_name,message.chat.dc_id),
         parse_mode="html"
     )
+    await message.reply_sticker("CAACAgIAAx0CVBD5pAACN5VjAqGYgoyg-OXjf0lNy0lgmhH37wACIAADlp-MDqz9QTP0qm_5HgQ")
     await message.reply_text(
-        text="**Hi {} bastard!**\n".format(message.chat.first_name)+C.START,
+        text="**Hi {} bastard!**\n\n".format(message.chat.first_name)+C.START,
         reply_markup=InlineKeyboardMarkup([
             [ InlineKeyboardButton(text="📍 KEK Store", url="https://t.me/+1avrX3ogSKNkZGU1"), InlineKeyboardButton(text="📣 Channel", url=f"{C.UPDATE_CHANNEL}")]
         ])
@@ -185,7 +186,7 @@ async def donate(bot, message):
         return
         
     await message.reply_text(
-        text=C.DONATE + "\nClick 👇🏼",
+        text=C.DONATE + "\n\nClick 👇🏼",
         reply_markup=InlineKeyboardMarkup([
             [ InlineKeyboardButton(text="📥 DONATE", url=f"{donate_link}")]
         ])
