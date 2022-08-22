@@ -129,9 +129,9 @@ async def start(bot, message):
         parse_mode="html"
     )
     await message.reply_text(
-        text="**Hi {}!**\n".format(message.chat.first_name)+C.START,
+        text="**Hi {} bastard!**\n".format(message.chat.first_name)+C.START,
         reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮UPDATES📮", url=f"{C.UPDATE_CHANNEL}")]
+            [ InlineKeyboardButton(text="📍 KEK Store", url="https://t.me/+1avrX3ogSKNkZGU1"), InlineKeyboardButton(text="📣 Channel", url=f"{C.UPDATE_CHANNEL}")]
         ])
     )
 
@@ -158,7 +158,7 @@ async def help(bot, message):
     await message.reply_text(
         text=C.HELP,
         reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮UPDATES📮", url=f"{C.UPDATE_CHANNEL}")]
+            [ InlineKeyboardButton(text="🛠SUPPORT🛠", url=f"{C.SUPPORT_GROUP}"), InlineKeyboardButton(text="📮 Contact Admin", url="http:t.me/zxync")]
         ])
     )
 
@@ -185,9 +185,9 @@ async def donate(bot, message):
         return
         
     await message.reply_text(
-        text=C.DONATE + "If You Liked This Bot You Can Also Donate Creator through BTC `3AKE4bNwb9TsgaofLQxHAGCR9w2ftwFs2R`",
+        text=C.DONATE + "\nClick 👇🏼",
         reply_markup=InlineKeyboardMarkup([
-            [ InlineKeyboardButton(text="DONATE", url=f"{donate_link}")]
+            [ InlineKeyboardButton(text="📥 DONATE", url=f"{donate_link}")]
         ])
     )
 
@@ -242,14 +242,14 @@ async def sts(c, m):
     )
 
 
-@bot.on_message(filters.private & filters.command("ban_user"))
+@bot.on_message(filters.private & filters.command("ban"))
 async def ban(c, m):
     if m.from_user.id not in AUTH_USERS:
         await m.delete()
         return
     if len(m.command) == 1:
         await m.reply_text(
-            f"Use this command to ban 🛑 any user from the bot 🤖.\n\nUsage:\n\n`/ban_user user_id ban_duration ban_reason`\n\nEg: `/ban_user 1234567 28 You misused me.`\n This will ban user with id `1234567` for `28` days for the reason `You misused me`.",
+            f"Use this command to ban 🛑 any user from the bot 🤖.\n\nUsage:\n\n`/ban user_id ban_duration ban_reason`\n\nEg: `/ban_user 1234567 28 You misused me.`\n This will ban user with id `1234567` for `28` days for the reason `You misused me`.",
             quote=True,
         )
         return
