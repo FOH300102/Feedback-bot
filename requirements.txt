@@ -1,5 +1,6 @@
 pyrogram==1.4.16
-tgcrypto
+TgCrypto==1.2.3
+pyromod==1.5
 aiofiles
 motor
 dnspython
