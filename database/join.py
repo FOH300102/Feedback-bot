@@ -1,4 +1,4 @@
-from env import UPDATE_CHANNEL
+from configs import UPDATE_CHANNEL
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
