@@ -21,7 +21,6 @@
 
 from pyrogram import Client, filters
 import logging
-import run
 
 from configs import Config as C
 
