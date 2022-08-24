@@ -7,9 +7,9 @@ from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvali
 
 app = Client(
     "bot",
-    api_id=env.API_ID,
-    api_hash=env.API_HASH,
-    bot_token=env.BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
     in_memory=True,
     plugins=dict(root="database"),
 )
