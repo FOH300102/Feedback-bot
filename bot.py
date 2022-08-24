@@ -101,7 +101,7 @@ async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
 @bot.on_message(filters.command('start') & (filters.private | filters.group))
-async def start(bot, message):
+async def start(bot: Client, message):
     chat_id = message.from_user.id
     # Adding to DB
     if not await db.is_user_exist(chat_id):
@@ -184,7 +184,7 @@ async def donate(bot, message):
     if is_banned is True:
         await message.reply_text(f"You are Banned 🚫 to use this bot for **{ban_duration}** day(s) for the reason __{ban_reason}__ \n\n**Message from the admin 🤠**")
         return
-        
+    await message.reply_sticker("CAADAgADlhIAAqUEmUvxBpnGajoesAI")
     await message.reply_text(
         text=C.DONATE + "\n\nClick 👇🏼",
         reply_markup=InlineKeyboardMarkup([
