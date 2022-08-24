@@ -35,6 +35,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 # from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 from pyrogram.types import *
+from pyrogram.types import Message
 
 from database.broadcast import broadcast
 from database.verifier import handle_user_status
@@ -101,7 +102,7 @@ async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
 @bot.on_message(filters.command('start') & (filters.private | filters.group))
-async def start(bot: Client, message):
+async def start(bot: Client, message: Message):
     chat_id = message.from_user.id
     # Adding to DB
     if not await db.is_user_exist(chat_id):
