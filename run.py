@@ -1,6 +1,6 @@
 # @KEK_Projects
 
-import configs
+
 import pyromod.listen
 from pyrogram import Client
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
