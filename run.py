@@ -1,15 +1,15 @@
 # @KEK_Projects
 
-
+import configs
 import pyromod.listen
 from pyrogram import Client
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
 
 app = Client(
     "bot",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    bot_token=BOT_TOKEN,
+    api_id=C.API_ID,
+    api_hash=C.API_HASH,
+    bot_token=C.BOT_TOKEN,
     in_memory=True,
     plugins=dict(root="database"),
 )
