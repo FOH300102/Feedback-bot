@@ -1,6 +1,5 @@
 # @KEK_Projects
 
-import env
 import configs
 import pyromod.listen
 from pyrogram import Client
