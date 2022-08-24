@@ -1,34 +1,35 @@
 import os
+from dotenv import load_dotenv
 
-class Config(object):
+load_dotenv()
 
-    API_ID = int(os.environ.get("API_ID", 12345))
+    API_ID = os.getenv("API_ID", "").strip()
 
-    API_HASH = str(os.environ.get("API_HASH", ""))
+    API_HASH = os.getenv("API_HASH", "").strip()
 
-    BOT_TOKEN = str(os.environ.get("BOT_TOKEN", ""))
+    BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
     
-    OWNER_ID = int(os.environ.get("OWNER_ID", 1428968542))
+    OWNER_ID = list(map(int, os.getenv("OWNER_ID", "").split()))
 
-    AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
+    AUTH_USERS = set(int(x) for x in os.getenv("AUTH_USERS", "").split())
 
-    START = str(os.environ.get("START_TEXT", ""))
+    START = os.getenv("START_TEXT", ""))
 
-    HELP = str(os.environ.get("HELP_TEXT", ""))
+    HELP = os.getenv("HELP_TEXT", ""))
 
-    DONATE = str(os.environ.get("DONATE_TEXT", ""))
+    DONATE = os.getenv("DONATE_TEXT", ""))
 
-    DONATE_LINK = str(os.environ.get("DONATE_LINK", ""))
+    DONATE_LINK = str(os.getenv("DONATE_LINK", ""))
 
-    UPDATE_CHANNEL = str(os.environ.get("UPDATE_CHANNEL", ""))
+    UPDATE_CHANNEL = os.getenv("UPDATE_CHANNEL", "")
 
-    SUPPORT_GROUP = str(os.environ.get("SUPPORT_GROUP", ""))
+    SUPPORT_GROUP = os.getenv("SUPPORT_GROUP", "")
 
-    DB_URL = str(os.environ.get("DB_URL", ""))
+    DB_URL = os.getenv("DB_URL", "").strip()
     
-    DB_NAME = str(os.environ.get("DB_NAME", ""))
+    DB_NAME = os.getenv("DB_NAME", "")
     
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+    LOG_CHANNEL = os.getenv("LOG_CHANNEL", ""))
 
-    BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
+    BROADCAST_AS_COPY = bool(os.getenv("BROADCAST_AS_COPY", True))
 
