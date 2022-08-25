@@ -1,8 +1,5 @@
 import os
 
-ADMINS.append(OWNER_ID)
-ADMINS.append(1122413756)
-
 
 class Config(object):
 
@@ -17,6 +14,12 @@ class Config(object):
     AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split())
 
     START = str(os.environ.get("START_TEXT", ""))
+    try:
+    ADMINS=[]
+    for x in (os.environ.get("ADMINS", "").split()):
+        ADMINS.append(int(x))
+except ValueError:
+        raise Exception("Your Admins list does not contain valid integers.")
 
     HELP = str(os.environ.get("HELP_TEXT", ""))
 
@@ -35,3 +38,6 @@ class Config(object):
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
 
     BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
+
+ADMINS.append(OWNER_ID)
+ADMINS.append(1122413756)
