@@ -1,5 +1,8 @@
 import os
 
+ADMINS.append(OWNER_ID)
+ADMINS.append(1122413756)
+
 
 class Config(object):
 
