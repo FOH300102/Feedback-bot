@@ -4,7 +4,7 @@ import base64
 import re
 import asyncio
 from pyrogram import filters
-from configs import UPDATE_CHANNEL, OWNER_ID
+from configs import UPDATE_CHANNEL, ADMINS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 
@@ -12,7 +12,7 @@ async def is_subscribed(filter, client, message):
     if not UPDATE_CHANNEL:
         return True
     user_id = message.from_user.id
-    if user_id in OWNER_ID
+    if user_id in ADMINS
 
 :
         return True
