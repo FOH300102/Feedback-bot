@@ -11,14 +11,14 @@ from func import subscribed, encode, decode, get_messages
 
 app = Client(
     "bot",
-    api_id=C.API_ID,
+    api_id=API_ID,
     api_hash=C.API_HASH,
     bot_token=C.BOT_TOKEN,
     in_memory=True,
     plugins=dict(root="database"),
 )
 
-@Bot.on_message(filters.command('start') & filters.private & subscribed)
+@app.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     text = message.text
     if len(text)>7:
@@ -50,7 +50,7 @@ async def start_command(client: Client, message: Message):
             except:
                 return
 
-@Bot.on_message(filters.command('start') & filters.private)
+@app.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     text = "<b>Anda harus bergabung Channel/Group Untuk menggunakan saya\n\nSilahkan Klik Bergabung Dulu</b>"
     message_text = message.text
